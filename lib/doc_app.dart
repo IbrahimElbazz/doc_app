@@ -1,6 +1,5 @@
 import 'package:docdoc/Core/Routing/app_router.dart';
 import 'package:docdoc/Core/Routing/routes.dart';
-import 'package:docdoc/Core/helpers/extentions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
