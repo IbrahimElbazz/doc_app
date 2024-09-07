@@ -64,7 +64,7 @@ class RegisterPage extends StatelessWidget {
                   )),
               hintText: "Your number",
               hintStyle:
-                  TextStyleApp.styletext(20, Colors.grey, FontWeight.normal),
+                  TextStyleApp.styletext(15, Colors.grey, FontWeight.normal),
               fillColor: const Color(0xffFDFDFF),
             )),
             const SizedBox(

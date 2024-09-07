@@ -29,7 +29,7 @@ class MyTextField extends StatelessWidget {
                 color: Colors.grey,
               )),
           hintText: hint,
-          hintStyle: TextStyleApp.styletext(20, Colors.grey, FontWeight.normal),
+          hintStyle: TextStyleApp.styletext(15, Colors.grey, FontWeight.normal),
           suffixIcon: Icon(
             icon,
             color: Colors.grey[800],
