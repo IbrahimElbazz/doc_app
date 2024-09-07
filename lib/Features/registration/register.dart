@@ -2,6 +2,7 @@ import 'package:docdoc/Core/Theming/text_style.dart';
 import 'package:docdoc/Core/Widgets/mybutton.dart';
 import 'package:docdoc/Core/Widgets/mytextfield.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
@@ -131,20 +132,21 @@ class RegisterPage extends StatelessWidget {
               children: [
                 const Text(
                   "By loggoing. you agree to our ",
-                  style: TextStyle(color: Color(0xff9e9e9e), fontSize: 13),
+                  style: TextStyle(color: Color(0xff9e9e9e), fontSize: 11),
                 ),
                 GestureDetector(
+                  onTap: () {},
                   child: const Text(
                     "Terms & Conditions",
                     style: TextStyle(
                       color: Color(0xff242424),
-                      fontSize: 14,
+                      fontSize: 13,
                     ),
                   ),
                 ),
                 const Text(
                   " and",
-                  style: TextStyle(color: Color(0xff9e9e9e), fontSize: 13),
+                  style: TextStyle(color: Color(0xff9e9e9e), fontSize: 11),
                 ),
               ],
             ),
