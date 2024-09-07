@@ -2,6 +2,8 @@ import 'package:docdoc/Core/Theming/text_style.dart';
 import 'package:docdoc/Core/Widgets/mybutton.dart';
 import 'package:docdoc/Core/Widgets/mytextfield.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
@@ -11,7 +13,7 @@ class RegisterPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xffffffff),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 100),
+        padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 40),
         child: ListView(
           scrollDirection: Axis.vertical,
           children: [
@@ -24,9 +26,14 @@ class RegisterPage extends StatelessWidget {
               height: 10,
             ),
             Text(
-              "Sign up now and start exploring all that our\napp has to offer. We're excited to welcome\nyou to our community!",
+              "Sign up now and start exploring all that our",
               style: TextStyleApp.styletext(
-                  15, Colors.grey[700]!, FontWeight.normal),
+                  14, Colors.grey[700]!, FontWeight.normal),
+            ),
+            Text(
+              "app has to offer. We're excited to welcome\nyou to our community!",
+              style: TextStyleApp.styletext(
+                  14, Colors.grey[700]!, FontWeight.normal),
             ),
             const SizedBox(
               height: 20,
@@ -42,33 +49,134 @@ class RegisterPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const MyTextField(
-              boool: false,
-              hint: "Your Number",
-              icon: Icons.arrow_drop_down,
-            ),
+            IntlPhoneField(
+                decoration: InputDecoration(
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16),
+                borderSide: BorderSide(
+                  color: Colors.grey[300]!,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16),
+                  borderSide: const BorderSide(
+                    color: Colors.grey,
+                  )),
+              hintText: "Your number",
+              hintStyle:
+                  TextStyleApp.styletext(20, Colors.grey, FontWeight.normal),
+              fillColor: const Color(0xffFDFDFF),
+            )),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
             MyButton(
               onPressed: () {},
               text: 'Create Account',
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
             const Row(
               children: [
-                Divider(
-                  color: Colors.black,
-                  thickness: 3,
-                  indent: 70,
-                  endIndent: 40,
+                Expanded(
+                  child: Divider(
+                    color: Color(0xffe0e0e0),
+                    thickness: 1,
+                  ),
                 ),
-                Text(
-                  "Or signin with ",
-                  style: TextStyle(fontSize: 12, color: Color(0xff9E9E9E)),
-                )
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Text(
+                    'Or sign in with',
+                    style: TextStyle(color: Colors.black54),
+                  ),
+                ),
+                Expanded(
+                  child: Divider(
+                    color: Color(0xffe0e0e0),
+                    thickness: 1,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CircleAvatar(
+                  backgroundColor: Color(0xfff5f5f5),
+                  radius: 30,
+                  child: SvgPicture.asset("assets/svgs/googlelogo.svg"),
+                ),
+                CircleAvatar(
+                  backgroundColor: Color(0xfff5f5f5),
+                  radius: 30,
+                  child: SvgPicture.asset("assets/svgs/facebook.svg"),
+                ),
+                CircleAvatar(
+                  backgroundColor: Color(0xfff5f5f5),
+                  radius: 30,
+                  child: SvgPicture.asset("assets/svgs/apple.svg"),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  "By loggoing. you agree to our ",
+                  style: TextStyle(color: Color(0xff9e9e9e), fontSize: 13),
+                ),
+                GestureDetector(
+                  child: const Text(
+                    "Terms & Conditions",
+                    style: TextStyle(
+                      color: Color(0xff242424),
+                      fontSize: 14,
+                    ),
+                  ),
+                ),
+                const Text(
+                  " and",
+                  style: TextStyle(color: Color(0xff9e9e9e), fontSize: 13),
+                ),
+              ],
+            ),
+            Center(
+                child: GestureDetector(
+              onTap: () {},
+              child: const Text("PrivacyPolicy",
+                  style: TextStyle(
+                    color: Color(0xff242424),
+                    fontSize: 14,
+                  )),
+            )),
+            const SizedBox(
+              height: 40,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  "Already have an Account. ",
+                  style: TextStyle(color: Color(0xff242424), fontSize: 13),
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: const Text(
+                    "SignIn",
+                    style: TextStyle(
+                      color: Color(0xff247cFF),
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
               ],
             ),
           ],
