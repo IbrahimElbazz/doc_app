@@ -1,5 +1,6 @@
 import 'package:docdoc/Core/Routing/app_router.dart';
 import 'package:docdoc/Core/Routing/routes.dart';
+import 'package:docdoc/Features/registration/register.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,7 +16,7 @@ class DocApp extends StatelessWidget {
         title: 'Doc Doc',
         debugShowCheckedModeBanner: false,
         onGenerateRoute: appRouter.generateRoute,
-        initialRoute: Routes.home,
+        initialRoute: Routes.register,
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:docdoc/Core/Routing/routes.dart';
 import 'package:docdoc/Features/Home/home_screen.dart';
+import 'package:docdoc/Features/registration/register.dart';
 import 'package:docdoc/doc_app.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,10 @@ class AppRouter {
       case Routes.home:
         return MaterialPageRoute(
           builder: (context) => const Home(),
+        );
+      case Routes.register:
+        return MaterialPageRoute(
+          builder: (context) => const RegisterPage(),
         );
       default:
         return MaterialPageRoute(
