@@ -1,5 +1,6 @@
 import 'package:docdoc/Core/Routing/routes.dart';
-import 'package:docdoc/Features/Home/home_screen.dart';
+import 'package:docdoc/Features/onBoarding/onBoadrding.dart';
+
 import 'package:docdoc/Features/registration/register.dart';
 import 'package:docdoc/doc_app.dart';
 import 'package:flutter/material.dart';
@@ -12,9 +13,9 @@ class AppRouter {
             builder: (context) => DocApp(
                   appRouter: AppRouter(),
                 ));
-      case Routes.home:
+      case Routes.OnBoadrding:
         return MaterialPageRoute(
-          builder: (context) => const Home(),
+          builder: (context) => const OnBoadrding(),
         );
       case Routes.register:
         return MaterialPageRoute(

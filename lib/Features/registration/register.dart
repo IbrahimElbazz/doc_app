@@ -50,7 +50,10 @@ class RegisterPage extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            const MyButton(),
+            MyButton(
+              onPressed: () {},
+              text: 'Create Account',
+            ),
             const SizedBox(
               height: 50,
             ),
