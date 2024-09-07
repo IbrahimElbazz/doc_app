@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
+    final Argument = settings.arguments;
     switch (settings.name) {
       case Routes.doc_app:
         return MaterialPageRoute(
