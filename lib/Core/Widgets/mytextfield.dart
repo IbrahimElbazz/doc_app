@@ -1,6 +1,5 @@
-import 'package:docdoc/Core/Theming/colors.dart';
+import 'package:docdoc/Core/Theming/text_style.dart';
 import 'package:flutter/material.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 class MyTextField extends StatelessWidget {
   const MyTextField({
@@ -30,7 +29,7 @@ class MyTextField extends StatelessWidget {
                 color: Colors.grey,
               )),
           hintText: hint,
-          hintStyle: styletext(20, Colors.grey, FontWeight.normal),
+          hintStyle: TextStyleApp.styletext(20, Colors.grey, FontWeight.normal),
           suffixIcon: Icon(
             icon,
             color: Colors.grey[800],

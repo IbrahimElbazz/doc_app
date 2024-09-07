@@ -1,6 +1,6 @@
-import 'package:docdoc/Core/Theming/colors.dart';
-import 'package:docdoc/Core/Theming/mybutton.dart';
-import 'package:docdoc/Core/Theming/mytextfield.dart';
+import 'package:docdoc/Core/Theming/text_style.dart';
+import 'package:docdoc/Core/Widgets/mybutton.dart';
+import 'package:docdoc/Core/Widgets/mytextfield.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -17,14 +17,16 @@ class RegisterPage extends StatelessWidget {
           children: [
             Text(
               "Create Account",
-              style: styletext(30, const Color(0xff247CFF), FontWeight.bold),
+              style: TextStyleApp.styletext(
+                  30, const Color(0xff247CFF), FontWeight.bold),
             ),
             const SizedBox(
               height: 10,
             ),
             Text(
               "Sign up now and start exploring all that our\napp has to offer. We're excited to welcome\nyou to our community!",
-              style: styletext(15, Colors.grey[700]!, FontWeight.normal),
+              style: TextStyleApp.styletext(
+                  15, Colors.grey[700]!, FontWeight.normal),
             ),
             const SizedBox(
               height: 20,

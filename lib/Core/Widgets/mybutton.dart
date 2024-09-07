@@ -1,4 +1,4 @@
-import 'package:docdoc/Core/Theming/colors.dart';
+import 'package:docdoc/Core/Theming/text_style.dart';
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
@@ -10,13 +10,14 @@ class MyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Color(0xff247CFF)),
-            minimumSize: MaterialStateProperty.all(Size(double.infinity, 52))),
+            backgroundColor: WidgetStateProperty.all(const Color(0xff247CFF)),
+            minimumSize:
+                WidgetStateProperty.all(const Size(double.infinity, 52))),
         onPressed: () {},
         child: Center(
             child: Text(
           "Create Account",
-          style: styletext(16, Colors.white, FontWeight.bold),
+          style: TextStyleApp.styletext(16, Colors.white, FontWeight.bold),
         )));
   }
 }
