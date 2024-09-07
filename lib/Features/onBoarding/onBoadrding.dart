@@ -35,12 +35,10 @@ class OnBoadrding extends StatelessWidget {
             height: 45.h,
           ),
           Stack(
+            //alignment: AlignmentDirectional.topCenter,
             children: [
-              Opacity(
-                opacity: 0.8,
-                child: SvgPicture.asset(
-                  'assets/svgs/Background_onBoarding_screen.svg',
-                ),
+              SvgPicture.asset(
+                'assets/svgs/Background_onBoarding_screen.svg',
               ),
               Container(
                 foregroundDecoration: BoxDecoration(
@@ -92,7 +90,7 @@ class OnBoadrding extends StatelessWidget {
           ),
           const Expanded(child: SizedBox()),
           Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 35),
             child: MyButton(
               onPressed: () {
                 context.pushNamed('/register');
