@@ -22,4 +22,16 @@ class TextStyleApp {
     fontFamily: 'Inter',
     fontWeight: FontWeight.w600,
   );
+  static TextStyle font14weight400colorGrey=TextStyle(
+    color: ColorsApp.grey,
+    fontSize: 14,
+    fontFamily: 'Inter',
+    fontWeight: FontWeight.w400,
+  );
+  static TextStyle font12weight400colorGrey=TextStyle(
+    color: ColorsApp.grey,
+    fontSize: 12,
+    fontFamily: 'Inter',
+    fontWeight: FontWeight.w400,
+  );
 }

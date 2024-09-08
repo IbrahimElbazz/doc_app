@@ -1,4 +1,5 @@
 import 'package:docdoc/Core/Routing/routes.dart';
+import 'package:docdoc/Features/login/login.dart';
 import 'package:docdoc/Features/onBoarding/onBoadrding.dart';
 
 import 'package:docdoc/Features/registration/register.dart';
@@ -14,14 +15,22 @@ class AppRouter {
             builder: (context) => DocApp(
                   appRouter: AppRouter(),
                 ));
+
       case Routes.OnBoadrding:
         return MaterialPageRoute(
           builder: (context) => const OnBoadrding(),
         );
+
+      case Routes.login:
+      return MaterialPageRoute(
+        builder: (context) =>  LogInScreen(),
+      );
+
       case Routes.register:
         return MaterialPageRoute(
           builder: (context) => const RegisterPage(),
         );
+
       default:
         return MaterialPageRoute(
           builder: (context) => const Scaffold(
