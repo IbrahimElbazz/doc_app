@@ -1,3 +1,4 @@
+import 'package:docdoc/Core/Theming/colors.dart';
 import 'package:docdoc/Core/Theming/text_style.dart';
 import 'package:flutter/material.dart';
 
@@ -25,11 +26,12 @@ class MyTextField extends StatelessWidget {
           ),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
-              borderSide: const BorderSide(
-                color: Colors.grey,
+              borderSide: BorderSide(
+                color: ColorsApp.blue,
               )),
           hintText: hint,
-          hintStyle: TextStyleApp.styletext(15, Colors.grey, FontWeight.normal),
+          hintStyle:
+              TextStyleApp.styletext(15, ColorsApp.grey, FontWeight.normal),
           suffixIcon: Icon(
             icon,
             color: Colors.grey[800],

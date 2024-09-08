@@ -5,7 +5,7 @@ import 'package:docdoc/Core/helpers/extentions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-import '../../Core/Theming/colors.dart';
+import '../../../../Core/Theming/colors.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
@@ -19,7 +19,7 @@ class RegisterPage extends StatelessWidget {
       body: Padding(
           padding: EdgeInsets.only(
             top: screenSize.height * .13,
-            left:screenSize.height * .03,
+            left: screenSize.height * .03,
             right: screenSize.height * .03,
           ),
           child: SingleChildScrollView(
@@ -115,7 +115,7 @@ class RegisterPage extends StatelessWidget {
                 ),
                 LogIn(
                   text1: 'Already have an account yet? ',
-                  text2: "Sign Up",
+                  text2: "Login",
                 ),
               ],
             ),
@@ -133,17 +133,17 @@ class SignInWith extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         CircleAvatar(
-          backgroundColor: ColorsApp.white,
+          backgroundColor: ColorsApp.grey.withOpacity(0.07),
           radius: 30,
           child: SvgPicture.asset("assets/svgs/googlelogo.svg"),
         ),
         CircleAvatar(
-          backgroundColor: ColorsApp.white,
+          backgroundColor: ColorsApp.grey.withOpacity(0.07),
           radius: 30,
           child: SvgPicture.asset("assets/svgs/facebook.svg"),
         ),
         CircleAvatar(
-          backgroundColor: ColorsApp.white,
+          backgroundColor: ColorsApp.grey.withOpacity(0.07),
           radius: 30,
           child: SvgPicture.asset("assets/svgs/apple.svg"),
         ),
@@ -204,7 +204,7 @@ class LogIn extends StatelessWidget {
   String text1;
   String text2;
 
-  LogIn({required this.text1, required this.text2});
+  LogIn({super.key, required this.text1, required this.text2});
 
   @override
   Widget build(BuildContext context) {
@@ -217,7 +217,7 @@ class LogIn extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            context.pushNamed('/login');
+            context.pop();
           },
           child: Text(
             text2,

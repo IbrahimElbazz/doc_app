@@ -18,19 +18,19 @@ class TextStyleApp {
 
   static TextStyle Button_Style = TextStyle(
     color: ColorsApp.white,
-    fontSize: 16,
+    fontSize: 16.sp,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w600,
   );
-  static TextStyle font14weight400colorGrey=TextStyle(
+  static TextStyle font14weight400colorGrey = TextStyle(
     color: ColorsApp.grey,
-    fontSize: 14,
+    fontSize: 14.sp,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w400,
   );
-  static TextStyle font12weight400colorGrey=TextStyle(
+  static TextStyle font12weight400colorGrey = TextStyle(
     color: ColorsApp.grey,
-    fontSize: 12,
+    fontSize: 12.sp,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w400,
   );
