@@ -5,18 +5,18 @@ import 'package:flutter/material.dart';
 class MyTextField extends StatelessWidget {
   const MyTextField({
     super.key,
-    required this.boool,
+    required this.showtext,
     required this.hint,
-    this.icon,
+    required this.icon,
   });
-  final bool? boool;
+  final bool? showtext;
   final String? hint;
   final IconData? icon;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-        obscureText: boool!,
+        obscureText: showtext!,
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
@@ -30,11 +30,10 @@ class MyTextField extends StatelessWidget {
                 color: ColorsApp.blue,
               )),
           hintText: hint,
-          hintStyle:
-              TextStyleApp.styletext(15, ColorsApp.grey, FontWeight.normal),
+          hintStyle: TextStyleApp.styletext(15, Colors.grey, FontWeight.normal),
           suffixIcon: Icon(
             icon,
-            color: Colors.grey[800],
+            color: Colors.grey,
           ),
           fillColor: const Color(0xffFDFDFF),
         ));

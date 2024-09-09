@@ -42,12 +42,16 @@ class LogInScreen extends StatelessWidget {
                 ),
                 const MyTextField(
                   hint: 'Email',
-                  boool: false,
+                  showtext: false,
+                  icon: Icons.email_outlined,
                 ),
                 SizedBox(
                   height: screenSize.height * .02,
                 ),
-                const MyTextField(boool: true, hint: "Password"),
+                const MyTextField(
+                    showtext: true,
+                    hint: "Password",
+                    icon: Icons.visibility_off),
                 SizedBox(
                   height: screenSize.height * .02,
                 ),
