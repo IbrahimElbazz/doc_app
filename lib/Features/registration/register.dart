@@ -1,6 +1,7 @@
 import 'package:docdoc/Core/Theming/text_style.dart';
 import 'package:docdoc/Core/Widgets/mybutton.dart';
 import 'package:docdoc/Core/Widgets/mytextfield.dart';
+import 'package:docdoc/Core/helpers/extentions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';

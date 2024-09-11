@@ -5,7 +5,6 @@ import 'package:docdoc/Core/helpers/spacing.dart';
 import 'package:docdoc/Features/login/ui/widgets/Sinup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Core/Widgets/mybutton.dart';
 import '../../../../Core/Widgets/mytextfield.dart';
 import '../../../registration/ui/screen/register.dart';
@@ -77,7 +76,9 @@ class LogInScreen extends StatelessWidget {
                   height: screenSize.height * .02,
                 ),
                 MyButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.pushNamed('/main');
+                  },
                   text: 'Login',
                 ),
                 SizedBox(

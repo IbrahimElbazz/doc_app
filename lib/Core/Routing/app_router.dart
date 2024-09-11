@@ -1,5 +1,7 @@
 import 'package:docdoc/Core/Routing/routes.dart';
 import 'package:docdoc/Features/login/ui/screen/login.dart';
+import 'package:docdoc/Features/main/screens/mainpage.dart';
+
 import 'package:docdoc/Features/onBoarding/ui/screen/onBoadrding.dart';
 import 'package:docdoc/Features/registration/ui/screen/register.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +14,10 @@ class AppRouter {
       case Routes.OnBoadrding:
         return MaterialPageRoute(
           builder: (context) => const OnBoadrding(),
+        );
+      case Routes.main:
+        return MaterialPageRoute(
+          builder: (context) => const MainPage(),
         );
 
       case Routes.login:
