@@ -4,7 +4,7 @@ import 'package:docdoc/Features/home/screens/home.dart';
 import 'package:docdoc/Features/messages/screens/message.dart';
 import 'package:docdoc/Features/more/screens/more.dart';
 import 'package:docdoc/Features/search/screens/search.dart';
-import 'package:docdoc/classprovider/pagesroutes.dart';
+import 'package:docdoc/Core/classprovider/pagesroutes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -20,11 +20,11 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List<Widget> pagelists = [
-    Homepage(),
-    Messagepage(),
-    SearchPage(),
-    Cleanderpage(),
-    Morepage()
+    const Homepage(),
+    const Messagepage(),
+    const SearchPage(),
+    const Cleanderpage(),
+    const Morepage()
   ];
 
   @override
@@ -34,14 +34,14 @@ class _MainPageState extends State<MainPage> {
         body: pagelists[pageindex.pageIndex],
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: Padding(
-          padding: EdgeInsets.only(top: 30),
+          padding: const EdgeInsets.only(top: 30),
           child: FloatingActionButton(
             onPressed: () {
               pageindex.pageIndex = 2;
             },
             backgroundColor: pageindex.pageIndex == 2
-                ? Color(0xff216FE2)
-                : Color(0xff257cff),
+                ? const Color(0xff216FE2)
+                : const Color(0xff257cff),
             child: SvgPicture.asset(
               "assets/svgs/search-normal.svg",
               width: 40.w,

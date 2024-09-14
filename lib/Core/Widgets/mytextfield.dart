@@ -5,37 +5,60 @@ import 'package:flutter/material.dart';
 class MyTextField extends StatelessWidget {
   const MyTextField({
     super.key,
-    required this.showtext,
+    this.showtext,
     required this.hint,
-    required this.icon,
+    this.icon,
+    this.controller,
+    required this.validator,
   });
   final bool? showtext;
   final String? hint;
-  final IconData? icon;
+  final Widget? icon;
+  final TextEditingController? controller;
+  final Function(String?) validator;
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-        obscureText: showtext!,
-        decoration: InputDecoration(
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
-            borderSide: BorderSide(
-              color: Colors.grey[300]!,
-            ),
+    return TextFormField(
+      controller: controller,
+      obscureText: showtext ?? false,
+      decoration: InputDecoration(
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide(
+            color: Colors.grey[300]!,
           ),
-          focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
-              borderSide: BorderSide(
-                color: ColorsApp.blue,
-              )),
-          hintText: hint,
-          hintStyle: TextStyleApp.styletext(15, Colors.grey, FontWeight.normal),
-          suffixIcon: Icon(
-            icon,
-            color: Colors.grey,
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide(
+            color: ColorsApp.blue,
           ),
-          fillColor: const Color(0xffFDFDFF),
-        ));
+        ),
+        errorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: Colors.red,
+            width: 1.3,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: Colors.red,
+            width: 1.3,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        hintText: hint,
+        hintStyle: TextStyleApp.styletext(15, Colors.grey, FontWeight.normal),
+        suffixIcon: icon,
+        //   color: Colors.grey,
+
+        fillColor: const Color(0xffFDFDFF),
+      ),
+      validator: (value) {
+        return validator(value);
+      },
+    );
   }
 }

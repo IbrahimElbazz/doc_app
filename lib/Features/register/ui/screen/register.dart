@@ -40,16 +40,20 @@ class RegisterPage extends StatelessWidget {
                 SizedBox(
                   height: screenSize.height * .04,
                 ),
-                const MyTextField(
+                MyTextField(
+                  validator: (p0) {},
                   showtext: false,
                   hint: 'Email',
-                  icon: Icons.email_outlined,
+                  icon: const Icon(Icons.email_outlined),
                 ),
                 SizedBox(
                   height: screenSize.height * .02,
                 ),
-                const MyTextField(
-                    icon: Icons.visibility, showtext: true, hint: "Password"),
+                MyTextField(
+                    validator: (p0) {},
+                    icon: const Icon(Icons.visibility),
+                    showtext: true,
+                    hint: "Password"),
                 SizedBox(
                   height: screenSize.height * .02,
                 ),

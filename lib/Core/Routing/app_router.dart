@@ -1,14 +1,17 @@
 import 'package:docdoc/Core/Routing/routes.dart';
+import 'package:docdoc/Core/di/dependency_injection.dart';
+import 'package:docdoc/Features/login/logic/cubit/login_cubit.dart';
 import 'package:docdoc/Features/login/ui/screen/login.dart';
 import 'package:docdoc/Features/main/screens/mainpage.dart';
-
 import 'package:docdoc/Features/onBoarding/ui/screen/onBoadrding.dart';
-import 'package:docdoc/Features/registration/ui/screen/register.dart';
+import 'package:docdoc/Features/register/logic/cubit/register_cubit.dart';
+import 'package:docdoc/Features/register/register.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
-    final Argument = settings.arguments;
+    //final Argument = settings.arguments;
 
     switch (settings.name) {
       case Routes.OnBoadrding:
@@ -22,12 +25,18 @@ class AppRouter {
 
       case Routes.login:
         return MaterialPageRoute(
-          builder: (context) => const LogInScreen(),
+          builder: (context) => BlocProvider(
+            create: (context) => getIt<LoginCubit>(),
+            child: const LogInScreen(),
+          ),
         );
 
       case Routes.register:
         return MaterialPageRoute(
-          builder: (context) => const RegisterPage(),
+          builder: (context) => BlocProvider(
+            create: (context) => getIt<RegisterCubit>(),
+            child: const RegisterPage(),
+          ),
         );
 
       default:

@@ -1,13 +1,18 @@
 import 'package:docdoc/Core/Theming/colors.dart';
 import 'package:docdoc/Core/Theming/text_style.dart';
-import 'package:docdoc/Core/helpers/extentions.dart';
+
 import 'package:docdoc/Core/helpers/spacing.dart';
-import 'package:docdoc/Features/login/ui/widgets/Sinup.dart';
+import 'package:docdoc/Features/login/data/models/request_login.dart';
+import 'package:docdoc/Features/login/logic/cubit/login_cubit.dart';
+
+import 'package:docdoc/Features/login/ui/widgets/pass_and_email_login.dart';
+import 'package:docdoc/Features/login/ui/widgets/loginBlocListener.dart';
+import 'package:docdoc/Features/login/ui/widgets/lowerDesignLogin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../Core/Widgets/mybutton.dart';
-import '../../../../Core/Widgets/mytextfield.dart';
-import '../../../registration/ui/screen/register.dart';
 
 class LogInScreen extends StatelessWidget {
   const LogInScreen({super.key});
@@ -39,18 +44,7 @@ class LogInScreen extends StatelessWidget {
                 SizedBox(
                   height: screenSize.height * .04,
                 ),
-                const MyTextField(
-                  hint: 'Email',
-                  showtext: false,
-                  icon: Icons.email_outlined,
-                ),
-                SizedBox(
-                  height: screenSize.height * .02,
-                ),
-                const MyTextField(
-                    showtext: true,
-                    hint: "Password",
-                    icon: Icons.visibility_off),
+                const EmailAndPass(),
                 SizedBox(
                   height: screenSize.height * .02,
                 ),
@@ -77,54 +71,25 @@ class LogInScreen extends StatelessWidget {
                 ),
                 MyButton(
                   onPressed: () {
-                    context.pushNamed('/main');
+                    // context.pushNamed('/main');
+                    validateThenDoLogin(context);
                   },
                   text: 'Login',
                 ),
                 SizedBox(
                   height: screenSize.height * .05,
                 ),
-                const Row(
-                  children: [
-                    Expanded(
-                      child: Divider(
-                        color: Color(0xffe0e0e0),
-                        thickness: 1,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Text(
-                        'Or sign in with',
-                        style: TextStyle(color: Colors.black54),
-                      ),
-                    ),
-                    Expanded(
-                      child: Divider(
-                        color: Color(0xffe0e0e0),
-                        thickness: 1,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: screenSize.height * .04,
-                ),
-                const SignInWith(),
-                SizedBox(
-                  height: screenSize.height * .04,
-                ),
-                const TermsAndConditions(),
-                SizedBox(
-                  height: screenSize.height * .04,
-                ),
-                SignUp(
-                  text3: "Don't Have any Account? ",
-                  text4: "Create Account",
-                ),
+                const lowerDesignLogin(),
+                const loginBlocListener(),
               ],
             ),
           ),
         ));
+  }
+
+  void validateThenDoLogin(BuildContext context) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginStates();
+    }
   }
 }
