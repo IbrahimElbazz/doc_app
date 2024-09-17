@@ -1,4 +1,5 @@
 import 'package:docdoc/Core/Widgets/mybutton.dart';
+import 'package:docdoc/Core/helpers/extentions.dart';
 import 'package:docdoc/Features/register/logic/cubit/register_cubit.dart';
 import 'package:docdoc/Features/register/ui/widgets/loginBlocListener.dart';
 import 'package:docdoc/Features/register/ui/widgets/pass_and_email_register.dart';
@@ -127,7 +128,9 @@ class RegisterPage extends StatelessWidget {
                   style: TextStyle(color: Color(0xff242424), fontSize: 13),
                 ),
                 GestureDetector(
-                  onTap: ontap,
+                  onTap: () {
+                    context.pop();
+                  },
                   child: const Text(
                     "SignIn",
                     style: TextStyle(

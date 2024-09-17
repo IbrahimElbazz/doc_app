@@ -47,6 +47,7 @@ class _PassAndEmailState extends State<PassAndEmail> {
             height: 20,
           ),
           IntlPhoneField(
+            initialCountryCode: 'EG',
             controller: context.read<RegisterCubit>().phoneController,
             validator: (value) {
               if (value == null) {
@@ -62,10 +63,11 @@ class _PassAndEmailState extends State<PassAndEmail> {
                 ),
               ),
               focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                  borderSide: const BorderSide(
-                    color: Colors.grey,
-                  )),
+                borderRadius: BorderRadius.circular(16),
+                borderSide: const BorderSide(
+                  color: Colors.grey,
+                ),
+              ),
               hintText: "Your number",
               hintStyle:
                   TextStyleApp.styletext(15, Colors.grey, FontWeight.normal),

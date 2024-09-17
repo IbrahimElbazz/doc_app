@@ -62,88 +62,87 @@ class OnBoadrding extends StatelessWidget {
               backgroundColor: ColorsApp.white,
               surfaceTintColor: ColorsApp.white,
             ),
-            body: ListView(
-              children: [
-                LogoApp(
-                  width_logo: 40.w,
-                  width_logo_text: 100.w,
-                ),
-                SizedBox(
-                  height: 45.h,
-                ),
-                Stack(
-                  //alignment: AlignmentDirectional.topCenter,
-                  children: [
-                    SvgPicture.asset(
-                      'assets/svgs/Background_onBoarding_screen.svg',
-                    ),
-                    Container(
-                      foregroundDecoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            colors: [
-                              ColorsApp.white,
-                              ColorsApp.white.withOpacity(0.0)
-                            ],
-                            begin: Alignment.bottomCenter,
-                            end: Alignment.topCenter,
-                            stops: const [0.14, 0.4]),
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  LogoApp(
+                    width_logo: 40.w,
+                    width_logo_text: 100.w,
+                  ),
+                  SizedBox(
+                    height: 45.h,
+                  ),
+                  Stack(
+                    //alignment: AlignmentDirectional.topCenter,
+                    children: [
+                      SvgPicture.asset(
+                        'assets/svgs/Background_onBoarding_screen.svg',
                       ),
-                      child: Image.asset(
-                        'assets/images/doctor.png',
+                      Container(
+                        foregroundDecoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [
+                                ColorsApp.white,
+                                ColorsApp.white.withOpacity(0.0)
+                              ],
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                              stops: const [0.14, 0.4]),
+                        ),
+                        child: Image.asset(
+                          'assets/images/doctor.png',
+                        ),
                       ),
-                    ),
-                    Positioned(
-                      top: 450.h,
-                      left: 100.w,
-                      child: Text(
-                        'Best Doctor ',
-                        textAlign: TextAlign.center,
-                        style: TextStyleApp.font32wieght700ColorBlue,
+                      Positioned(
+                        top: 450.h,
+                        left: 100.w,
+                        child: Text(
+                          'Best Doctor ',
+                          textAlign: TextAlign.center,
+                          style: TextStyleApp.font32wieght700ColorBlue,
+                        ),
                       ),
-                    ),
-                    Positioned(
-                      top: 488.h,
-                      left: 60.w,
-                      child: Text(
-                        'Appointment App',
-                        textAlign: TextAlign.center,
-                        style: TextStyleApp.font32wieght700ColorBlue,
+                      Positioned(
+                        top: 488.h,
+                        left: 60.w,
+                        child: Text(
+                          'Appointment App',
+                          textAlign: TextAlign.center,
+                          style: TextStyleApp.font32wieght700ColorBlue,
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  Center(
+                    child: Text(
+                      'Physician Assistant is a specialty of Docdoc',
+                      style: TextStyle(
+                        color: ColorsApp.grey,
+                        fontSize: 12.sp,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400,
+                        height: 0.14,
                       ),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                Center(
-                  child: Text(
-                    'Physician Assistant is a specialty of Docdoc',
-                    style: TextStyle(
-                      color: ColorsApp.grey,
-                      fontSize: 12.sp,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w400,
-                      height: 0.14,
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 30.h,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 20.0, horizontal: 35),
-                  child: MyButton(
-                    onPressed: () {
-                      context.pushNamed('/login');
-                    },
-                    text: 'Get Started',
+                  SizedBox(
+                    height: 30.h,
                   ),
-                ),
-                SizedBox(
-                  height: 15.h,
-                )
-              ],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 20.0, horizontal: 35),
+                    child: MyButton(
+                      onPressed: () {
+                        context.pushNamed('/login');
+                      },
+                      text: 'Get Started',
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
