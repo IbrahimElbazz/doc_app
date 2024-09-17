@@ -12,7 +12,7 @@ platform :android do
       android_artifact_path:"../build/app/outputs/flutter-apk/app-production-release.apk",
       testers:"mostafahinawi2004@gmail.com",
       upload_timeout:600,
-      release_notes:"Apk version 1"
+      release_notes:"Apk version 2"
 
 
     )
