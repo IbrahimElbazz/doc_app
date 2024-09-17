@@ -1,5 +1,8 @@
 plugins {
     id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
     id "kotlin-android"
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
@@ -43,6 +46,19 @@ android {
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
     }
+    flavorDimensions "default"
+    productFlavors {
+        development {
+            dimension "default"
+            resValue "string", "app_name", "Doc Doc development"
+            applicationIdSuffix ".dev"
+        }
+         production {
+            dimension "default"
+            resValue "string", "app_name", "Doc Doc production"
+
+        }
+    }    
 
     buildTypes {
         release {
@@ -51,8 +67,12 @@ android {
             signingConfig = signingConfigs.debug
         }
     }
+
+
+
 }
 
 flutter {
     source = "../.."
 }
+
