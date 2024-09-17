@@ -44,3 +44,6 @@
     </queries>
     
 </manifest>
+<manifest xmlns:android="...">
+  <uses-permission android:name="android.permission.INTERNET"/> <!-- Add this -->
+</manifest>
