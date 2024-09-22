@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {
-  Route generateRoute(RouteSettings settings) {
+  Route? generateRoute(RouteSettings settings) {
     //final Argument = settings.arguments;
 
     switch (settings.name) {
@@ -40,13 +40,7 @@ class AppRouter {
         );
 
       default:
-        return MaterialPageRoute(
-          builder: (context) => const Scaffold(
-            body: Center(
-              child: Text('Route not found'),
-            ),
-          ),
-        );
+        return null;
     }
   }
 }
